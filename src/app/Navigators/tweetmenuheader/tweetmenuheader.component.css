@@ -1,0 +1,48 @@
+ul.nav li a:hover, ul.nav li a:active {
+    color: black !important;
+    margin-bottom: 0px;
+    padding: 5ppx;
+    font-weight: bold;
+}
+
+ul.nav li.nav-item a.nav-link {
+    color: rgb(0, 110, 255) !important;
+    margin: 0px;
+    padding: 3px;
+    font-weight: 500;
+
+}
+
+img.navIcon{
+    height: 30px;
+    width: 45px;
+} 
+
+a.navbar-brand{
+    color: rgb(0, 110, 255);
+    text-decoration-color: rgb(0, 110, 255);
+    font-weight: bolder;
+}
+
+input{
+    font-weight: 500;
+}
+
+.navbar-toggler{
+    border-color: rgb(1, 82, 189);
+}
+
+.navbar-toggler:focus{
+    box-shadow: royalblue !important;
+}
+
+.nav-tabs{
+    padding: 5px;
+    margin: 5px;
+}
+
+div.justify-content-end{
+   float: right; 
+   margin-left: auto;
+   margin-right: 0px;
+}

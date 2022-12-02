@@ -1,0 +1,34 @@
+<section class="vh-100">
+    <div class="container py-3 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-8 col-xl-7">
+                <div class="card shadow-2-strong"
+                    style="border-radius: 30rem black; box-shadow: 0 3rem 6rem 0 rgba(0,0,0,0.3); background-color: white;">
+                    <div class="card-body px-3 text-left">
+                        <div *ngFor="let user of users">
+                            <div class="container bcontent">
+                                <div class="card" style="width: 100%; padding: 5px;">
+                                    <div class="row no-gutters">
+                                        <div class="col-8 col-md-4 col-lg-4 col-xl-4"
+                                            style="display: flex; justify-content: center; margin: 0 auto;">
+                                            <img class="card-img" src=".\assets\Profile.png" alt="User info card"
+                                                height="100%">
+                                        </div>
+                                        <div class="col-12 col-md-8 col-lg-8 col-xl-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">{{user.firstName}} {{user.lastName}}</h5>
+                                                <p class="card-text"><strong>UserName : </strong>{{user.email}}</p>
+                                                <p class="card-text"><strong>Gender : </strong>{{user.gender}}</p>
+                                                <p class="card-text"><strong>Phone : </strong>{{user.contactNumber}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

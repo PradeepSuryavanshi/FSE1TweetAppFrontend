@@ -1,0 +1,41 @@
+.parent{
+    display: flex;
+    height: 710px;
+    align-items: center;    /* aligns vertically */
+    justify-content: center;  /* aligns horizontally */
+}
+.child{
+    width: 700px;
+    height: 700px;
+    text-align: center;
+    padding: 20px;
+}
+
+.bcontent{
+    margin: auto;
+    vertical-align: middle;
+    
+}
+.row{
+    margin: 0 auto;
+    width:100%;
+}
+
+.img{
+    position: absolute;
+    margin: 0 auto;
+    display: block;
+    object-fit: contain;
+ width:80%;
+    top: 50%;
+    bottom: 50%;
+    transform: translate(-50%,-50%);
+}
+
+p{
+    margin: 0;
+}
+
+strong{
+    font-weight: 600;
+}

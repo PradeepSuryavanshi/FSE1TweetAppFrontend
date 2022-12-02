@@ -1,0 +1,76 @@
+<div class="m-0 p-0">
+    <nav class="navbar navbar-toggleable-sm navbar-expand-lg navbar-light navbar-custom">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"><img src=".\assets\SiteLogo.png" class="m-2" alt="Site Logo"
+                        height="30px" width="40px">Tweet App</a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
+                aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarToggler">
+                <div class="collapse navbar-collapse col-12 col-md-12 col-lg-9 col-xl-9 justify-content-center"
+                    style="margin:auto; padding:0;" id="navbarToggler">
+                    <ul class="nav navbar-nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#"><img src=".\assets\HomeIcon.png"
+                                    class="navIcon px-2">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link">
+                                <img src=".\assets\Tweets.png" height="100%" width="100%" class="navIcon px-2">Tweets
+                            </a>
+                            <div class="dropdown-menu">
+                        <li class="nav-item dropdown-item">
+                            <a class="nav-link" routerLink="/tweets"><img src=".\assets\AllTweets.png" height="100%"
+                                    width="100%" class="navIcon px-2">All Tweets</a>
+                        </li>
+                        <li class="nav-item dropdown-item">
+                            <a *ngIf="isLoggedIn()" class="nav-link" routerLink="/mytweets"><img
+                                    src=".\assets\MyTweets.png" height="100%" width="100%" class="navIcon px-2">My
+                                Tweets</a>
+                        </li>
+                        <li class="nav-item dropdown-item">
+                            <a class="nav-link " routerLink="/tweetsof"><img src=".\assets\AddTweet.png" height="100%"
+                                    width="100%" class="navIcon px-2">Tweets of</a>
+                        </li>
+
+                        <li *ngIf="isLoggedIn()" class="nav-item dropdown-item">
+                            <a class="nav-link" (click)="PostTweet();"><img src=".\assets\AddTweet.png" height="100%"
+                                    width="100%" class="navIcon px-2">Add Tweet</a>
+                        </li>
+                </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/community"><img src=".\assets\Peoples.png"
+                            class="navIcon px-2">Community</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/searchuser"><img src=".\assets\Search.png" height="100%"
+                            width="100%" class="navIcon px-2">Search User</a>
+                </li>
+                <li *ngIf="isLoggedIn()" class="nav-item">
+                    <a class="nav-link" (click)="ResetPassword();"><img src=".\assets\ResetPassword.png" height="100%"
+                            width="100%" class="navIcon px-2">Reset Password</a>
+                </li>
+                </ul>
+            </div>
+
+            <div class="collapse navbar-collapse col-12 col-md-12 col-lg-3 col-xl-3 justify-content-end"
+                style="float: right; margin-left: auto;" id="navbarToggler">
+                <div class="navbar-nav nav" style="float: right;" *ngIf="!isLoggedIn()">
+                    <input type="submit" class="btn btn-primary btn-sm m-2" value="Sign In" routerLink='/login'>
+
+                    <input type="submit" class="btn btn-primary btn-sm m-2" value="Sign Up" routerLink='/register'>
+                </div>
+                <div class="navbar-nav nav" style="float: right;" *ngIf="isLoggedIn()">
+                    <input type="submit" class="btn btn-primary btn-sm m-2" value="Log Out" (click)="onLogout()">
+                </div>
+            </div>
+        </div>
+</div>
+</nav>
+
+</div>

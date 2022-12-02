@@ -1,0 +1,112 @@
+<section class="vh-100">
+    <div class="container py-3 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-8 col-xl-7">
+                <div class="card shadow-2-strong"
+                    style="border-radius: 30rem black; box-shadow: 0 3rem 6rem 0 rgba(0,0,0,0.3); background-color: white;">
+                    <div class="card-body px-5 text-left">
+                        <h3 class="mb-5 text-center" style="color: rgba(0,110,255); padding-top: 30px;"><img
+                                src=".\assets\Register.png" class="px-2" height="40rem" width="60rem">Sign Up</h3>
+                        <form [formGroup]="registrationForm" (ngSubmit)="onSubmit(registrationForm)">
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+
+                                    <div class="form-group form-outline">
+                                        <label class="form-label" for="firstName">First Name:</label>
+                                        <input type="text" id="firstName" name="firstName" formControlName="firstName"
+                                            class="form-control form-control-lg" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 mb-4">
+
+                                    <div class="form-outline form-group">
+                                        <label class="form-label" for="lastName">Last Name:</label>
+                                        <input type="text" id="lastName" name="lastName" formControlName="lastName"
+                                            class="form-control form-control-lg" />
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4 d-flex align-items-center">
+
+                                    <div class="form-outline form-group datepicker w-100">
+                                        <label for="dateOfBirth" class="form-label">Birthday:</label>
+                                        <input type="date" class="form-control form-control-lg" id="dateOfBirth"
+                                            name="dateOfBirth" formControlName="dateOfBirth" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 mb-4 form-group">
+
+                                    <h5 class="mb-2 pb-1" for="gender">Gender: </h5>
+
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="gender" id="female"
+                                            value="female" formControlName="gender" checked />
+                                        <label class="form-check-label" for="female">Female</label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="gender" id="male"
+                                            value="male" formControlName="gender" />
+                                        <label class="form-check-label" for="male">Male</label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="gender" id="other"
+                                            value="other" formControlName="gender" />
+                                        <label class="form-check-label" for="other">Other</label>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4 pb-2">
+
+                                    <div class="form-outline form-group">
+                                        <label class="form-label" for="emailAddress">Email:</label>
+                                        <input type="email" id="emailAddress" name="emailAddress"
+                                            formControlName="email" class="form-control form-control-lg" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 mb-4 pb-2">
+
+                                    <div class="form-outline form-group">
+                                        <label class="form-label" for="contactNumber">Phone Number:</label>
+                                        <input type="tel" id="contactNumber" name="contactNumber"
+                                            formControlName="contactNumber" class="form-control form-control-lg" />
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4 pb-2">
+
+                                    <div class="form-outline form-group">
+                                        <label class="form-label" for="password">Password:</label>
+                                        <input type="password" id="password" name="password" formControlName="password"
+                                            class="form-control form-control-lg" />
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="mt-4 pt-2 form-group">
+                                <input class="btn btn-primary btn-lg btn-block" type="submit" value="Register"
+                                    [disabled]="!registrationForm.valid" />
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

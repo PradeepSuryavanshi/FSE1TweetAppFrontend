@@ -1,0 +1,40 @@
+<div class=" col-12 col-md-9 row justify-content-center align-items-center h-100"
+    style="margin: 0 auto;padding: 0 auto;">
+    <div class="m-0 p-0">
+        <nav class="navbar navbar-toggleable-sm navbar-expand-md navbar-light navbar-custom">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#TweetMenuToggler" aria-controls="TweetMenuToggler" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    Tweet Menu
+                </button>
+
+                <div class="collapse navbar-collapse" id="TweetMenuToggler">
+                    <div class="collapse navbar-collapse  justify-content-center" id="TweetMenuToggler">
+                        <ul class="nav navbar-nav nav-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link" routerLink="/tweets"><img src=".\assets\AllTweets.png"
+                                        height="100%" width="100%" class="navIcon px-2">All Tweets</a>
+                            </li>
+                            <li class="nav-item">
+                                <a *ngIf = "isLoggedIn()" class="nav-link" routerLink="/mytweets"><img src=".\assets\MyTweets.png"
+                                        height="100%" width="100%" class="navIcon px-2">My Tweets</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" routerLink="/tweetsof"><img src=".\assets\AddTweet.png"
+                                        height="100%" width="100%" class="navIcon px-2">Tweets of</a>
+                            </li>
+                            
+                            <li *ngIf = "isLoggedIn()" class="nav-item">
+                                <a class="nav-link" (click)="PostTweet();"><img src=".\assets\AddTweet.png"
+                                        height="100%" width="100%" class="navIcon px-2">Post tweet</a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+
+                </div>
+            </div>
+        </nav>
+    </div>

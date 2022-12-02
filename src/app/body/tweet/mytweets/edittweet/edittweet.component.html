@@ -1,0 +1,49 @@
+<section class="vh-100">
+    <div class="container py-3 h-100">
+        <div class="row d-flex justify-content-center h-100">
+            <div class="col-12 col-md-8 col-lg-8 col-xl-7">
+                <div class="card shadow-2-strong"
+                    style="border-radius: 30rem black; box-shadow: 0 3rem 6rem 0 rgba(0,0,0,0.3); background-color: white;">
+
+                    <div class="card-body px-3 text-left">
+
+
+                        <form [formGroup]="editTweetForm" (ngSubmit)="onSubmit(editTweetForm)">
+                            <!-- Email input -->
+                            <div class="col-md-12 mb-4">
+                                <div class="form-outline form-group">
+                                    <label class="form-label" for="emailAddress">Email:</label>
+                                    <input type="email" id="emailAddress" name="emailAddress" formControlName="email"
+                                        class="form-control form-control-lg" />
+                                </div>
+                            </div>
+
+                            <!-- Message input -->
+                            <div class="col-md-12 mb-4">
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="message">Message:</label>
+                                    <textarea class="form-control" id="message" name="message" formControlName="message"
+                                        rows="4"></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Name input -->
+                            <div class="col-md-12 mb-4">
+                                <div class="form-outline form-group">
+                                    <label class="form-label" for="tag">Tags:</label>
+                                    <input type="text" id="tag" name="tag" formControlName="tag"
+                                        class="form-control form-control-lg" />
+                                </div>
+                            </div>
+                            <!-- Submit button -->
+                            <button type="submit" class="btn btn-primary btn-block mb-4"
+                                [disabled]="!editTweetForm.valid">Send</button>
+                        </form>
+                        <hr>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

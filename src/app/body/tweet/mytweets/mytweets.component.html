@@ -1,0 +1,73 @@
+<section class="vh-100">
+    <div class="container py-3 h-100">
+        <div class="row d-flex justify-content-center h-100">
+            <div class="col-12 col-md-8 col-lg-8 col-xl-7">
+                <div class="card shadow-2-strong"
+                    style="border-radius: 30rem black; box-shadow: 0 3rem 6rem 0 rgba(0,0,0,0.3); background-color: white;">
+                    <app-edittweet *ngIf="editselected" [tweettobeedited]="passtweet" (event)="IsEdited($event)">
+                    </app-edittweet>
+
+                    <div *ngIf="!editselected" (event)="IsEdited($event)" class="card-body px-3 text-left">
+
+                        <div *ngFor="let tweet of tweets">
+                            <div class="container bcontent">
+                                <div class="card" style="width: 100%; padding: 5px; border-width: 5px;" [ngStyle]="{'border-color': (tweet.reply) ? 'red' : 'green'}">
+                                    <div class="row no-gutters">
+                                        <div class="col-8 col-md-4 col-lg-4 col-xl-4"
+                                            style="display: flex; justify-content: center; margin: 0 auto;">
+                                            <img class="card-img" src=".\assets\Profile.png" alt="User info card"
+                                                height="100%">
+                                        </div>
+                                        <div class="col-12 col-md-8 col-lg-8 col-xl-8">
+                                            <div class="card-body">
+                                                <h6 class="card-title">{{tweet.username}}</h6>
+                                                <hr>
+                                                <p class="card-text">{{tweet.message}}</p>
+                                                <p class="card-text" style="font-weight: 500; font-style: italic;">
+                                                    {{tweet.tag}}</p>
+
+                                                <p class="card-text" type="date"><b>posted on-
+                                                    </b>{{tweet.postedOn|date:'d-M-Y'}}</p>
+                                                <hr>
+                                                <div class="container col-12" style="float:left; padding:0;">
+
+                                                    <button (click)="Liked(tweet.username, tweet.tweetId)"
+                                                        class=" col-md-6 col-lg-3" type="button" class="btn btn-primary"
+                                                        style="margin: 0 3px; padding: 3px 10px; float: left; width: 45%;"
+                                                        [disabled]="!isLoggedIn()">
+                                                        Like <span
+                                                            class="badge  rounded-pill bg-danger">{{tweet.likes}}</span>
+                                                    </button>
+                                                    <button [routerLink]="['/comments',tweet.tweetId]" type="button"
+                                                        class="btn btn-primary"
+                                                        style="margin: 0 3px; padding: 3px auto; float: right; width: 45%;"
+                                                        [disabled]="!isLoggedIn()">
+                                                        Comment</button>
+                                                </div>
+
+                                                <div class="container col-12" style="float:right; padding:0;">
+                                                    <button (click)="EditTweet(tweet)" type="button"
+                                                        class="btn btn-primary"
+                                                        style="margin: 3px 3px;padding: 3px auto;  float:left; width: 45%;"
+                                                        [disabled]="!isLoggedIn()">
+                                                        Edit Tweet
+                                                    </button>
+                                                    <button (click)="DeleteTweet(tweet.tweetId)" type="button"
+                                                        class="btn btn-primary"
+                                                        style="margin: 3px 3px;padding: 3px 16px; float: right; width: 45%;"
+                                                        [disabled]="!isLoggedIn()">
+                                                        Delete </button>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
